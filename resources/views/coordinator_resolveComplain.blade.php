@@ -1,0 +1,29 @@
+<x-coordinator_sidebar/>  
+<div class="col-sm-8 text-center mt-5"> 
+                <div class="h3">Complains</div>
+                @include('alert')
+                <table class="table table-hover table-bordered">
+                        <thead>
+                            <th scope="col"><a href="">student ID</a></th>
+                            <th scope="col">Complain</th>
+                            <th scope="col">Date Submitted</th>
+                        </thead>
+                        <tbody>
+                           @forelse($complains as $complain)
+                           <tr>
+                                <td>{{$complain->student_id}}</td>
+                                <td>{{$complain->complain}}</td>
+                                <td>{{$complain->date_sent}}</td>        
+                            </tr>
+                            @empty
+                           @endforelse
+                        </tbody>
+                    </table>
+                    <span>
+                        {{$complains->links()}}
+                    </span>
+         </div>
+</div>
+</div>
+</body>
+</html>
